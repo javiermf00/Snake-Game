@@ -1,1 +1,1 @@
-Snake
+Small snake game
