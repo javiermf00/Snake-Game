@@ -6,7 +6,7 @@ function Food:load()
 end
 
 function Food:update(dt)
-    math.randomseed(os.time)
+   -- math.randomseed(os.time)
 end
 
 function Food:spawn()

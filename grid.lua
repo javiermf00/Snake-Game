@@ -17,7 +17,9 @@ end
 
 function Grid:drawGrid()
     for y = 1, self.maxTilesY do
+
         for x = 1, self.maxTilesX do
+            
             love.graphics.rectangle('line', (x - 1) * self.tileSize, (y - 1) * self.tileSize, self.tileSize, self.tileSize)
         end
     end

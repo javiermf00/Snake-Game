@@ -5,14 +5,14 @@ function Snake:load()
     self.y = love.graphics.getHeight() / 2
     self.width = 16
     self.height = 16
-    self.xspeed = 100
+    self.xspeed = 16
     self.yspeed = 0
 end
 
-function Snake:update(dt)
+function Snake:update()
     --the snake constantly moves in one direction
-    self.x = self.x + self.xspeed * dt
-    self.y = self.y + self.yspeed * dt
+    self.x = self.x + self.xspeed
+    self.y = self.y + self.yspeed
 end
 
 function Snake:direction(x, y)
