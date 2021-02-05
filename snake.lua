@@ -1,11 +1,11 @@
 Snake = {}
 
 function Snake:load()
-    self.x = love.graphics.getWidth() / 2
-    self.y = love.graphics.getHeight() / 2
-    self.width = 16
-    self.height = 16
-    self.xspeed = 16
+    self.x = Grid.tileSize
+    self.y = Grid.tileSize
+    self.width = Grid.tileSize
+    self.height = Grid.tileSize
+    self.xspeed = Grid.tileSize
     self.yspeed = 0
 end
 
@@ -18,6 +18,10 @@ end
 function Snake:direction(x, y)
     self.xspeed = x
     self.yspeed = y
+end
+
+function Snake:grow()
+    
 end
 
 function Snake:draw()

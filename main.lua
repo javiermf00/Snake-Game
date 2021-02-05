@@ -4,9 +4,8 @@ require('grid')
 
 function love.load()
     interval = 20
-    Snake:load()
-    Food:load()
     Grid:load()
+    Snake:load()
 end
 
 function love.update(dt)
@@ -15,7 +14,6 @@ function love.update(dt)
         Snake:update()
         interval = 20
     end
-    Food:update(dt)
 end
 
 function love.keypressed(key)
@@ -29,11 +27,12 @@ function love.keypressed(key)
         Snake:direction(-16,0)
     elseif key == 'escape' then
         love.event.quit()
+    elseif key == 'k' then
+        Grid:spawnFood()
     end
 end
 
 function love.draw()
-    Snake:draw()
-    Food:draw()
     Grid:draw()
+    Snake:draw()
 end
