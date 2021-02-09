@@ -14,6 +14,7 @@ function love.update(dt)
         Snake:update()
         interval = 20
     end
+    checkCollision()
 end
 
 function love.keypressed(key)
@@ -27,12 +28,18 @@ function love.keypressed(key)
         Snake:direction(-16,0)
     elseif key == 'escape' then
         love.event.quit()
-    elseif key == 'k' then
-        Grid:spawnFood()
     end
 end
 
 function love.draw()
     Grid:draw()
     Snake:draw()
+end
+
+function checkCollision()
+    if Snake.x == Grid.foodX and Snake.y == Grid.foodY then
+        Grid:spawnFood()
+        Snake.tailLength = Snake.tailLength + 1
+        table.insert(Snake.Tail, {-16,-16})
+    end
 end

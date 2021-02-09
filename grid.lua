@@ -28,8 +28,8 @@ end
 
 function Grid:spawnFood()
     math.randomseed(os.time())
-    self.foodX = roundFood(math.random(love.graphics.getWidth()), self.tileSize)
-    self.foodY = roundFood(math.random(love.graphics.getHeight()), self.tileSize)
+    self.foodX = roundFood(math.random(love.graphics.getWidth() - 1), self.tileSize)
+    self.foodY = roundFood(math.random(love.graphics.getHeight() - 1), self.tileSize)
 end
 
 function roundFood(numRound, multiple)
