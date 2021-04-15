@@ -7,10 +7,6 @@ function Grid:load()
     self:spawnFood()
 end
 
-function Grid:update(dt)
-    
-end
-
 function Grid:draw()
     love.graphics.setColor(0, 0, 0, 1)
     self:drawGrid()
@@ -28,8 +24,8 @@ end
 
 function Grid:spawnFood()
     math.randomseed(os.time())
-    self.foodX = roundFood(math.random(love.graphics.getWidth() - 1), self.tileSize)
-    self.foodY = roundFood(math.random(love.graphics.getHeight() - 1), self.tileSize)
+    self.foodX = roundFood(math.random(love.graphics.getWidth() - 16), self.tileSize)
+    self.foodY = roundFood(math.random(love.graphics.getHeight() - 16), self.tileSize)
 end
 
 function roundFood(numRound, multiple)

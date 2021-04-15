@@ -18,13 +18,13 @@ function love.update(dt)
 end
 
 function love.keypressed(key)
-    if key == 'w' then
+    if key == 'w' and Snake.yspeed <= 0 then
         Snake:direction(0,-16)
-    elseif key == 's' then
+    elseif key == 's' and Snake.yspeed >= 0  then
         Snake:direction(0,16)
-    elseif key == 'd' then
+    elseif key == 'd' and Snake.xspeed >= 0 then
         Snake:direction(16,0)
-    elseif key == 'a' then
+    elseif key == 'a' and Snake.xspeed <= 0 then
         Snake:direction(-16,0)
     elseif key == 'escape' then
         love.event.quit()
